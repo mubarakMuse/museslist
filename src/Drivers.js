@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { DriversDB } from './DriversDB'; // Import the named export DriversDB
 
 const Drivers = () => {
-  const DriverPreviewCard = ({ driverData }) => {
-    
+  const DriverPreviewCard = ({ driverData, name }) => {
     return (
       <div className="bg-white rounded-lg shadow-md p-4">
         <img
@@ -15,7 +15,12 @@ const Drivers = () => {
           {driverData.name}
         </h2>
         <p className="text-gray-500 text-center">{driverData.location}</p>
-        {/* Display other driver information here */}
+        <Link to={`/d/${name}`} className="block mt-4">
+          {/* Use Link component to navigate to the driver's URL */}
+          <button className="bg-black hover:bg-black text-white font-bold py-2 px-4 rounded-full w-full">
+            View Profile
+          </button>
+        </Link>
       </div>
     );
   };
@@ -26,6 +31,7 @@ const Drivers = () => {
         <DriverPreviewCard
           key={driverName}
           driverData={DriversDB[driverName]}
+          name= {driverName}
         />
       ))}
     </div>
