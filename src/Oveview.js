@@ -1,6 +1,5 @@
 import React from 'react';
-import { FiStar, FiPhone, FiChevronRight } from 'react-icons/fi';
-// import driverData from './driverData.json'; // Import the JSON data
+import { FiStar, FiPhone } from 'react-icons/fi';
 
 function Overview( {driverData} ) {    
     return (

@@ -13,7 +13,6 @@ const App = () => {
           <Route path="/" element={<HomePage/>} />
           <Route path="/drivers" element={<Drivers/>} />
           <Route path="/d/:name" element={<DriverPage />} />
-
         </Routes>
       </Router>
     </div>

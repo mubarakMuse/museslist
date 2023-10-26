@@ -1,9 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FiStar, FiPhone, FiChevronRight } from 'react-icons/fi';
 import { DriversDB } from './DriversDB'; // Import the named export DriversDB
-import pic from "./nuurdiin.png"
 import BookingForm from './BookingForm';
-import { useNavigate,useParams } from 'react-router-dom';
 import Overview from './Oveview.js';
 
 function Page({name}) {
