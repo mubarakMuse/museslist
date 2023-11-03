@@ -18,7 +18,8 @@ function DriverPage() {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
+// eslint-disable-next-line
   useEffect(() => {
     getDrivers();
   }, []);
