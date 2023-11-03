@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
+name,location,rating,trips,yearsInService,car,services,phoneNumber,pic,email,costPerMile
+Nurudiin Farah,Minnesota,5.0 Stars,750 Trips,5 Years,Black GMC SUV [HKC109],"Corporate Transportation, Airport car service, Weddings, Proms, Sports & Social Events, Executive Limo",952-652-3891,nuurdiin.png,mubarak014@gmail.com,10
+Mubarak,Nurudiin Farah,Minnesota,5.0 Stars,750 Trips,5 Years,Black GMC SUV [HKC109],"Corporate Transportation, Airport car service, Weddings, Proms, Sports & Social Events, Executive Limo",952-652-3891,nuurdiin.png,mubarak014@gmail.com,10
+You can save this data in a .csv file and use 

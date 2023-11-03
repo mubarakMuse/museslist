@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiStar, FiPhone } from 'react-icons/fi';
+import { FiStar ,FiThumbsUp, FiClock} from 'react-icons/fi';
 
 function Overview( {driverData} ) {    
 return (
@@ -8,13 +8,13 @@ return (
         <div className="mb-4">
             <h3 className="text-lg font-semibold">Profile</h3>
             <p className="text-gray-600">
-                <FiStar className="inline-block mr-1" /> {driverData.rating}
+                <FiStar className="inline-block mr-1" /> {driverData.rating} Stars
             </p>
             <p className="text-gray-600">
-                <FiPhone className="inline-block mr-1" /> {driverData.trips}
+                <FiThumbsUp className="inline-block mr-1" /> {driverData.trips} Trips
             </p>
             <p className="text-gray-600">
-                <FiPhone className="inline-block mr-1" /> {driverData.yearsInService}
+                <FiClock className="inline-block mr-1" /> {driverData.yearsInService} Years
             </p>
         </div>
         <div className="mb-4">

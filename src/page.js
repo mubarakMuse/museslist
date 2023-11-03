@@ -4,9 +4,10 @@ import { DriversDB } from './DriversDB'; // Import the named export DriversDB
 import BookingForm from './BookingForm';
 import Overview from './Oveview.js';
 
-function Page({name}) {
+function Page({name,driver}) {
 
-  let driverData = DriversDB[name];
+  let driverData = driver;
+  console.log(driverData)
 
   const [activeTab, setActiveTab] = useState('overview');
   const handleTabChange = (tab) => {
@@ -27,7 +28,7 @@ function Page({name}) {
     <div className="bg-white-600 p-2 shadow-lg rounded-lg w-96 mx-auto mt-7">
       <div className="text-center mb-4">
         <img
-          src={driverData.pic}
+          src={DriversDB[driver.username].pic}
           alt="Driver's Profile"
           className="w-24 h-24 rounded-full mx-auto mb-2"
         />

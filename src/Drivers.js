@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { DriversDB } from './DriversDB'; // Import the named export DriversDB
+import { FiStar } from 'react-icons/fi';
 
 const Drivers = () => {
   const DriverPreviewCard = ({ driverData, name }) => {
@@ -14,6 +15,9 @@ const Drivers = () => {
         <h2 className="text-xl font-semibold text-center mt-4">
           {driverData.name}
         </h2>
+        <p className="text-gray-600 text-center">
+                <FiStar className="inline-block mr-1" /> {driverData.rating}
+            </p>
         <p className="text-gray-500 text-center">{driverData.location}</p>
         <Link to={`/d/${name}`} className="block mt-4">
           {/* Use Link component to navigate to the driver's URL */}
