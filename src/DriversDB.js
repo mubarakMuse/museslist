@@ -34,9 +34,13 @@ export const DriversDB = {
     ],
     "phoneNumber": "952-652-3891",
     // Import profile pic using require (CommonJS)
-    "pic": require("./outboaundlimo_logo.png"),
+    "pic": require("./outboundlogo.png"),
     email: "mubarak014@gmail.com",
-    costPerMile:10
+    costPerMile:4.25,
+    costPerMileSedan: 3.75,
+    minRideCost:70,
+    startCost:15
+
  
   }
 };

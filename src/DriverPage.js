@@ -4,12 +4,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Page from "./page";
 import Error404 from "./Error404";
-import { createClient } from "@supabase/supabase-js";
+// import { createClient } from "@supabase/supabase-js";
+import { supabase } from './supabase'; // Import your Supabase client instance
 
-const supabase = createClient(
-  "https://wakzuklfbtvgsmkjawuv.supabase.co",process.env.REACT_APP_SUPERBASE_KEY
+
+// const supabase = createClient(
+//   "https://wakzuklfbtvgsmkjawuv.supabase.co",process.env.REACT_APP_SUPERBASE_KEY
   
-);
+// );
 
 function DriverPage() {
   const { name } = useParams();
