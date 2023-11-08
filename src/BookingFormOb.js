@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Autocomplete, useJsApiLoader } from '@react-google-maps/api';
 import emailjs from 'emailjs-com';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from './supabase';
 
 
 const BookingFormOb = ({ driverData }) => {
@@ -21,10 +21,10 @@ const BookingFormOb = ({ driverData }) => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ['places'],
   });
-  const supabase = createClient(
-    "https://wakzuklfbtvgsmkjawuv.supabase.co",process.env.REACT_APP_SUPERBASE_KEY
+  // const supabase = createClient(
+  //   "https://wakzuklfbtvgsmkjawuv.supabase.co",process.env.REACT_APP_SUPERBASE_KEY
     
-  );
+  // );
   const BookingSuccess = () => {
     return (
       <div className="max-w-md bg-green-200 mx-auto p-6 border border-green-400">

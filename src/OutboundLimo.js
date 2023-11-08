@@ -56,10 +56,15 @@ function OutboundLimo() {
           <p className="text-lg opacity-80 leading-relaxed">
             Arrive in style, comfort, and elegance with Outbound Limo.
           </p>
+          
           <div>
+          <button onClick={handleCallButtonClick} className=" px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white text-xl font-semibold">
+          Call {DriversDB.outbound_limo.phoneNumber}
+            </button>
             <button onClick={scrollToBookingForm} className=" px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold">
               Book Your Exclusive Ride Today
             </button>
+
           </div>
         </div>
         <div className="lg:w-full">
