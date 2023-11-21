@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Landing from './OutboundLimo';
 // import BookingsPage from './BookingsPage';
 // import LandingPage from './ApartmentSearchForm';
+// import Apartments from './Apartments';
+// import ApartmentList from './ApartmentList';
+import Home from './Home';
 import Apartments from './Apartments';
 // import DriverRegistrationForm from './DriverRegistrationForm';
 
@@ -15,7 +18,9 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Apartments/>} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/find" element={<Apartments/>} />
+
           {/* <Route path="/outbound-limo" element={<Landing/>} />
           <Route path="/outbound-limo/bookings" element={<BookingsPage/>} /> */}
           {/* <Route path="/drivers" element={<Drivers/>} />
