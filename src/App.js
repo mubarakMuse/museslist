@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import ApartmentList from './ApartmentList';
 import Home from './Home';
 import Apartments from './Apartments';
+import "./App.css"; // Import your CSS file
 // import DriverRegistrationForm from './DriverRegistrationForm';
 
 const App = () => {

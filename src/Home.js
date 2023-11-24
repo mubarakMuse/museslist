@@ -16,17 +16,17 @@ const Home = () => {
         </div>
         <div className="mt-4 sm:mt-0">
           <Link to="/find">
-            <button className="bg-black text-white px-3 py-2 rounded-md sm:text-xl hover:bg-black-100 focus:outline-none">
-              Find Me An Apartment
+            <button className="bg-black text-white px-3 py-2 rounded-lg shadow  hover:bg-black-100 focus:outline-none">
+              Find Me An Apartment [FREE]
             </button>
           </Link>
         </div>
       </nav>
       <div className="flex flex-col items-center text-center font-serif justify-center p-6">
-        <p className="text-gray-600 lg:text-lg mb-4">
+        <p className="text-gray-700 font-bold  lg:text-xl italic mb-4">
           An exclusive list of the best apartment deals in Minnesota.
         </p>
-        <p className="text-gray-600 mb-3">
+        <p className="text-gray-700 font-bold italic lg:text-l mb-3">
           Carefully vetted and maintained by humans.
         </p>
       </div>
