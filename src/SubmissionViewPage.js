@@ -15,7 +15,6 @@ function SubmissionViewPage() {
     if (enteredCode === submissionData.code) { // Replace "your-uuid-code" with the actual UUID code
       setValidCode(true);
       setCodeError(false);
-      fetchMessages(); // Fetch messages when code is valid
     } else {
       setValidCode(false);
       setCodeError(true);
@@ -51,6 +50,8 @@ function SubmissionViewPage() {
           console.error("Error fetching submission:", error);
         } else if (data.length === 1) {
           setSubmissionData(data[0]); // Set the submission data if found
+          fetchMessages(); // Fetch messages when code is valid
+
         }
       } catch (error) {
         console.error("Error:", error);
