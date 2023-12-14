@@ -1,6 +1,5 @@
 import React from "react";
 import ApartmentSearchForm from "./ApartmentSearchForm";
-import { Link } from "react-router-dom";
 
 function Apartments() {
   const scrollToBookingForm = () => {
@@ -13,15 +12,6 @@ function Apartments() {
     }
   };
 
-  const scrollToLearnMore = () => {
-    const howItWorks = document.getElementById("howItWorks");
-    if (howItWorks) {
-      window.scrollTo({
-        top: howItWorks.offsetTop,
-        behavior: "smooth", // Smooth scrolling effect
-      });
-    }
-  };
 
   return (
     <div className="h-screen font-serif">

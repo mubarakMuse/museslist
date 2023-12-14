@@ -78,7 +78,7 @@ function SubmissionsListPage() {
   const leaveMessage = async () => {
     if (selectedSubmission && message) {
       try {
-        const { data, error } = await supabase.from("messages").upsert([
+        const { error } = await supabase.from("messages").upsert([
           {
             submission_id: selectedSubmission.id,
             message_text: message,

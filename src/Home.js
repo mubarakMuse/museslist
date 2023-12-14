@@ -1,6 +1,5 @@
 import React from "react";
 import ApartmentList from "./ApartmentList";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
