@@ -17,7 +17,11 @@ const ApartmentCard = ({ apartment }) => {
 
   return (
     <div className="bg-base-300 rounded-lg shadow-md overflow-hidden">
-      <img src={apartment.image} alt={apartment.name} className="w-full h-48 object-cover" />
+      <img
+        src={apartment.image}
+        alt={apartment.name}
+        className="w-full h-48 object-cover"
+      />
       <div className="p-4">
         <h2 className="text-2xl font-semibold mb-2">{apartment.name}</h2>
         <p className="text-gray-600 text-sm mb-2">{apartment.address}</p>
@@ -28,31 +32,30 @@ const ApartmentCard = ({ apartment }) => {
           </div>
         </div>
 
-        <span className="bg-green-400 border border-green-600 text-white text-md px-2 py-1 rounded-md mb-4">
+        <span className="bg-blue-400 border border-black text-white text-md px-2 py-1 rounded-md mb-4">
           {apartment.deal}
         </span>
 
         <div className="flex items-center text-sm space-x-2 mt-4">
-  <button
-    onClick={navigateToCompanyWebsite}
-    className="bg-black text-white px-2 py-1 rounded-md text-sm hover:bg-white hover:text-black border border-black focus:outline-none"
-  >
-    Visit Site
-  </button>
-  <button
-    onClick={handleCallButtonClick}
-    className="bg-gray-600 text-white px-2 py-1 rounded-md text-sm border border-gray-700 hover:bg-gray-800 hover:text-white focus:outline-none"
-  >
-    Call {apartment.phone}
-  </button>
-  <button
-    onClick={toggleDetails}
-    className="bg-gray-300 justify-end  text-black px-2 py-1 rounded-md text-sm hover:bg-base-400 focus:outline-none"
-  >
-    {showDetails ? "Hide Details" : "Show Details"}
-  </button>
-
-</div>
+          <button
+            onClick={navigateToCompanyWebsite}
+            className="bg-black text-white px-2 py-1 rounded-md text-sm hover:bg-white hover:text-black border border-black focus:outline-none"
+          >
+            Visit Site
+          </button>
+          <button
+            onClick={handleCallButtonClick}
+            className="bg-gray-600 text-white  px-2 py-1 rounded-md text-sm border border-gray-700 hover:bg-gray-800 hover:text-white focus:outline-none"
+          >
+            Call {apartment.phone}
+          </button>
+          <button
+            onClick={toggleDetails}
+            className="bg-gray-300 justify-end  text-black px-2 py-1 rounded-md text-sm hover:bg-base-400 focus:outline-none"
+          >
+            {showDetails ? "Hide Details" : "Show Details"}
+          </button>
+        </div>
 
         {showDetails && (
           <div className="mt-4">

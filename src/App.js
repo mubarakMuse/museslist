@@ -1,36 +1,46 @@
 // App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import DriverPage from './DriverPage';
-// import HomePage from './homepage';
-// import Drivers from './Drivers';
-// import Landing from './OutboundLimo';
-// import BookingsPage from './BookingsPage';
-// import LandingPage from './ApartmentSearchForm';
-// import Apartments from './Apartments';
-// import ApartmentList from './ApartmentList';
-import Home from './Home';
-import Apartments from './Apartments';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import Apartments from "./Apartments";
 import "./App.css"; // Import your CSS file
-// import DriverRegistrationForm from './DriverRegistrationForm';
+import SubmissionsListPage from "./SubmissionsListPage";
+import SubmissionViewPage from "./SubmissionViewPage";
 
 const App = () => {
   return (
     <div>
       <Router>
+        <div className="navbar border font-serif bg-base-100">
+          <div className="flex-1">
+            <img
+              src={require("./assets/museslist_logo.png")}
+              alt="Muse's List"
+              className="h-10 w-10 "
+            />
+            <a
+              href="/"
+              className="lg:px-3 px-1 font-serif font-semibold lg:text-2xl text-lg"
+            >
+              Muse's List
+            </a>
+          </div>
+          <div className="flex-none">
+            <ul className="menu text-sm menu-horizontal">
+              <li>
+                <a href="/submissions">Submissions</a>
+              </li>
+              <li>
+                <a href="/deals">Deals</a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/find" element={<Apartments/>} />
-
-          {/* <Route path="/outbound-limo" element={<Landing/>} />
-          <Route path="/outbound-limo/bookings" element={<BookingsPage/>} /> */}
-          {/* <Route path="/drivers" element={<Drivers/>} />
-          <Route path="/apartmentfinder" element={<LandingPage/>} />
-          <Route path="/a" element={<Apartments/>} /> */}
-
-
-          {/* <Route path="/drivers/register" element={<DriverRegistrationForm/>} /> */}
-          {/* <Route path="/d/:name" element={<DriverPage />} /> */}
+          <Route path="/" element={<Apartments />} />
+          <Route path="/deals" element={<Home />} />
+          <Route path="/submissions" element={<SubmissionsListPage />} />
+          <Route path="/submissions/:id" element={<SubmissionViewPage />} />
         </Routes>
       </Router>
     </div>
