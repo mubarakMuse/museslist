@@ -6,7 +6,7 @@ import cityOptions from "./cities";
 function SubmissionsListPage() {
   const [submissions, setSubmissions] = useState([]);
   const [locationFilter, setLocationFilter] = useState(null);
-  const [validCode, setValidCode] = useState(false);// check
+  const [validCode, setValidCode] = useState(true);// check
   const [enteredCode, setEnteredCode] = useState("");
   const [codeError, setCodeError] = useState(false);
   const [message, setMessage] = useState("");
