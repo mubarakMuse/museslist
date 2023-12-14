@@ -57,8 +57,8 @@ function SubmissionViewPage() {
         console.error("Error:", error);
       }
     }
-   // eslint-disable-next-line react-hooks/exhaustive-deps
     fetchSubmission();
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
