@@ -20,6 +20,7 @@ function ApartmentSearchForm() {
     additionalDetails: "",
   });
   const [submissionMessage, setSubmissionMessage] = useState("");
+  const [id, setId] = useState(null);
 
   // Function to generate price options with a specified range and increment
   function generatePriceOptions(min, max, increment) {
@@ -33,7 +34,6 @@ function ApartmentSearchForm() {
     }
     return options;
   }
-
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -92,12 +92,12 @@ function ApartmentSearchForm() {
           "Error: Something went wrong. Please try again later."
         );
       } else {
-        console.log("Data inserted into Supabase:", data);
-
-        console.log("Email sent successfully");
+        const submissionLink = `/submissions/${data[0].id}`;
         setSubmissionMessage(
-          `Thank you for submitting your request, ${formData.name}! You can track your submission at |museslist.com/submissions/${data[0].id}`
+          `Thank you, ${formData.name}! Your request has been submitted successfully. Apartments that have units matching your request will leave a message here: basefinds.com${submissionLink}`
         );
+        setId(data[0].id);
+        window.open(submissionLink, "_blank");
 
         setFormData({
           name: "",
@@ -112,50 +112,36 @@ function ApartmentSearchForm() {
           amenities: [],
           additionalDetails: "",
         });
-        window.open(`/submissions/${data[0].id}`, "_blank");
-
       }
     } catch (error) {
       console.error("Error:", error);
       setSubmissionMessage(
-        "Error: Something went wrong. Please try again later."
+        "Error: Something went wrong during submission. Please try again later."
       );
     }
   };
 
   const SubmissionMessage = ({ submissionStatus }) => {
     if (!submissionStatus) {
-      return null; // Don't render anything if there's no submission status
+      return null;
     }
 
-    // Define a CSS class based on the submission status (success or error)
-    const messageClass = submissionStatus.includes("Error")
+    const isError = submissionStatus.startsWith("Error");
+    const messageClass = isError
       ? "bg-red-100 border border-red-400 text-red-700"
       : "bg-green-100 border border-green-400 text-green-700";
 
-    const messageArr = submissionStatus.includes("Error")
-      ? [submissionStatus]
-      : submissionStatus.split("|");
-
-    console.log(messageArr);
-
-    // Check if there's a link in the message
-    const hasLink = messageArr.length > 1;
-
     return (
-      <div
-        className={`${messageClass} p-4 rounded-lg flex flex-col`}
-        role="alert"
-      >
-        <p>{messageArr[0]}</p>
-        {hasLink && (
+      <div className={`${messageClass} p-4 rounded-lg`} role="alert">
+        <p>{submissionStatus}</p>
+        {!isError && id && (
           <a
-            href={messageArr[1]}
+            href={`/submissions/${id}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto underline hover:no-underline"
+            className="underline hover:no-underline"
           >
-            {messageArr[1]}
+            View your submission
           </a>
         )}
       </div>

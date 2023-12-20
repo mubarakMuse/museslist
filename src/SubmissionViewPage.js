@@ -157,7 +157,7 @@ function SubmissionViewPage() {
              ))}
            </ul>
          ) : (
-           <p className="text-gray-500">No messages for this submission.</p>
+           <p className="text-gray-500">No messages for this submission yet.</p>
          )}
        </div>
       )}

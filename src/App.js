@@ -13,16 +13,16 @@ const App = () => {
       <Router>
         <div className="navbar border font-serif bg-base-100">
           <div className="flex-1">
-            <img
+            {/* <img
               src={require("./assets/museslist_logo.png")}
               alt="Muse's List"
               className="h-10 w-10 "
-            />
+            /> */}
             <a
               href="/"
-              className="lg:px-3 px-1 font-serif font-semibold lg:text-2xl text-lg"
+              className="lg:px-1 px-1 font-serif  lg:text-2xl text-lg"
             >
-              Muse's List
+              BaseFinds
             </a>
           </div>
           <div className="flex-none">
